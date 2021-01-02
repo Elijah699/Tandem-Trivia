@@ -1,0 +1,25 @@
+body {
+    background-color: #EAEDED;
+}
+
+.tandem {
+    font-family: "Josefin Sans", sans-serif;
+    line-height: 20px;
+}
+
+.green {
+    color: #044104;
+}
+
+.list {
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+/* .rounded {
+    border-radius: 2px;
+} */

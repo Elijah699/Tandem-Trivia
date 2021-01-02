@@ -1,0 +1,25 @@
+body {
+    /* font-family: 'Josefin Sans', sans-serif; */
+    background-color: #EAEDED;
+}
+
+.tandem {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font: normal;
+    font-size: 50px;
+    line-height: 20px;
+}
+
+.green {
+    color: #044104;
+}
+
+button {
+    background-color: #044104;
+}
+
+ul {
+    margin-left: 20px;
+}
