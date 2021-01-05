@@ -2,12 +2,10 @@ fetch("/assets/Question/Tandem_Questions/Apprentice_TandemFor400_Data.json")
   .then((res) => res.json())
   .then((res) => updateGame(res));
 
-  
 const updateGame = (data) => {
   let questions = data;
   let randomIndexesOfQuestions = [];
   let questionsToAsk = [];
-
 
   function pickTen() {
     // choose a random number between 0 and (array.length - 1).
@@ -20,14 +18,12 @@ const updateGame = (data) => {
 
     //  if after the number was picked the length of the random indexes is 10,
     //  pick the questions with those indexes and add them to the new array.
-    
+
     if (randomIndexesOfQuestions.length === 10) {
       questionsToAsk = randomIndexesOfQuestions.map(
         (indexOfQuestion) => questions[indexOfQuestion]
       );
-    }
-    
-    else {
+    } else {
       // if 10 questions are not picked yet, pick again.
       pickTen();
     }
@@ -46,26 +42,26 @@ const updateGame = (data) => {
   );
 
   const element = document.getElementById("option__list");
-element.addEventListener("click",  function (e)  {
- 
-  console.log(this.className);
-
- console.log(e.currentTarget === this);
-
- if (e.target.innerText === questionsToAsk[question__index].correct) {
-  document.e.target.style.backgroundColor = "red";
-  
-  // let g = document.getElementsByTagName("li");
-  //  g.style.backgroundColor = "lightblue";
-   
- } else {
-   console.log("grey");
- }
-} );
-
+  element.addEventListener("click", function (e) {
+    let correctElem = "";
+    let optionList = document.getElementsByClassName("list");
+    for (let i = 0; i < optionList.length; i++) {
+      if (optionList[i].innerText === questionsToAsk[question__index].correct) {
+        correctElem = i;
+        console.log(correctElem);
+      }
+    }
+    if (e.target.classList.contains("list")) {
+      if (e.target.innerText === questionsToAsk[question__index].correct) {
+        e.target.style.backgroundColor = "green";
+      } else {
+        optionList[correctElem].style.backgroundColor = "green";
+        e.target.style.backgroundColor = "red";
+      }
+      console.log(e.target.className);
+    }
+  });
 };
-
-
 
 // Manipulate answer position
 function updateAnswers(incorrect, correct) {
@@ -80,44 +76,28 @@ function updateAnswers(incorrect, correct) {
     <li class="list">${arr[1]}</li>
     <li class="list">${arr[2]}</li>
     <li class="list">${arr[3]}</li>`;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 //   for( var i = 0; i < questionsToAsk.length; i++) {
-  //     // console.log(questionsToAsk[questionToDisplay + i]);
-  //     document.getElementById("currentQuestion").innerHTML = questionsToAsk[questionToDisplay].question;
+//     // console.log(questionsToAsk[questionToDisplay + i]);
+//     document.getElementById("currentQuestion").innerHTML = questionsToAsk[questionToDisplay].question;
 
-  // console.log(updateAnswers(questionsToAsk[questionToDisplay].incorrect, questionsToAsk[questionToDisplay].correct));
+// console.log(updateAnswers(questionsToAsk[questionToDisplay].incorrect, questionsToAsk[questionToDisplay].correct));
 
-  //     document.getElementById("")
+//     document.getElementById("")
 
-  //   };
+//   };
 
-  // document.getElementById("question").innerHTML = questionsToAsk.map(
-  //   (index, num) => `
-  //      <div>
+// document.getElementById("question").innerHTML = questionsToAsk.map(
+//   (index, num) => `
+//      <div>
 
-  //          <h3 class="">${index.question}</h3>
-  //          ${updateAnswers(index.incorrect, index.correct)}
+//          <h3 class="">${index.question}</h3>
+//          ${updateAnswers(index.incorrect, index.correct)}
 
-  //            <div>
-  //            <h4> Question <span class=""> ${(num += 1)}</span> of 10</h4>
-  //            </div>
-  //      </div>
-  // `
-  // );
+//            <div>
+//            <h4> Question <span class=""> ${(num += 1)}</span> of 10</h4>
+//            </div>
+//      </div>
+// `
+// );
