@@ -1,0 +1,71 @@
+body {
+    background-color: #EAEDED;
+}
+
+.tandem {
+    font-family: "Josefin Sans", sans-serif;
+    line-height: 20px;
+}
+
+.green {
+    color: #044104;
+}
+
+.line {
+    background-color: #044104;
+    height: 5px;
+    width: 85px;
+}
+
+
+.list {
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px;
+    margin-left: 100px;
+    margin-right: 300px;
+}
+
+
+#question__num {
+    border: solid #8e8e8e;
+    border-width: thin;
+    border-radius: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 786px) {
+
+    h2 {
+        font-size: 2rem;
+        padding-top: 10px;
+    }
+
+    #game {
+        padding: 20px;
+    }
+
+    #current__question {
+        padding: 10px;
+    }
+
+    .list {
+        margin: 15px;
+        padding: 10px;
+        margin-right: -5px;
+        margin-left: -22px;
+    }
+
+    h5 {
+        padding: 15px;
+    }
+
+}

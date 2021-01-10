@@ -6,10 +6,7 @@ body {
 .tandem {
     font-family: "Josefin Sans", sans-serif;
     font-weight: 700;
-    font-style: normal;
-    font: normal;
-    font-size: 50px;
-    line-height: 20px;
+    font-size: 72px;
 }
 
 .green {
@@ -23,3 +20,4 @@ button {
 ul {
     margin-left: 20px;
 }
+
